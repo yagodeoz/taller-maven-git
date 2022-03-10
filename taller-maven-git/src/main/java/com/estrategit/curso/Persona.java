@@ -1,5 +1,7 @@
 package com.estrategit.curso;
 
+//import java.lang.String;
+
 /*
  * @Autor: Byron Segovia
  */
@@ -7,10 +9,52 @@ package com.estrategit.curso;
 //Clase de pruebas taller 5
 public class Persona {
 
-	public static void main(String[] argumentos) {
+	private static Integer contadorPersona;
 
-		System.out.print("Hola");
+	private String nombrePersona;
+	private String cedula;
 
+	static {
+		contadorPersona = 0;
+	}
+
+	public Persona(String nombre, String cedula) {
+		nombrePersona = nombre;
+		this.cedula = cedula;
+		contadorPersona++;
+	}
+
+	public String getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+
+	public String getNombrePersona() {
+		return nombrePersona;
+	}
+
+	public void setNombrePersona(String nombrePersona) {
+		this.nombrePersona = nombrePersona;
+	}
+
+	public String convertirCadena() {
+		return nombrePersona + " " + cedula;
+	}
+
+	public static Integer getContadorPersona() {
+		return contadorPersona;
+	}
+
+	public static String concatenarNombres(String nombre1, String nombre2) {
+		return nombre1 + " " + nombre2;
+	}
+	
+	
+	public String toString() {
+		return "Nombre: " + nombrePersona + " - Cedula: " + cedula;
 	}
 
 }
