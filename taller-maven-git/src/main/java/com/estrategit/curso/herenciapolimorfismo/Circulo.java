@@ -2,7 +2,7 @@ package com.estrategit.curso.herenciapolimorfismo;
 
 public class Circulo extends Figura {
 
-	public static Double PI;
+	public static final Double PI;
 
 	private Double radio;
 
