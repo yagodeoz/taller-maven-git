@@ -12,7 +12,7 @@ public class Persona {
 	private static Integer contadorPersona;
 
 	private String nombrePersona;
-	private String cedula;
+	protected String cedula;
 
 	static {
 		contadorPersona = 0;
