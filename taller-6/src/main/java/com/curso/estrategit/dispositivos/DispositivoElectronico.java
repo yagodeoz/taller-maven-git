@@ -22,6 +22,14 @@ public class DispositivoElectronico {
 		apagar = new Apagar();
 	}
 	
+	public DispositivoElectronico(String nombre, String marca) {
+		this.nombre = nombre;
+		this.marca = marca;
+		this.modelo = "Generico";
+		encender = new Encender();
+		apagar = new Apagar();
+	}
+	
 	public String getMarcaModelo() {
 		return nombre + " " + marca + " " + modelo;
 	}
