@@ -50,15 +50,23 @@ public class ConceptosStringStringBuffer {
 		System.out.println(cadenaBuffer);
 		System.out.println(cadenaBuffer.reverse());
 		
-		
+		System.out.println("-------------------");
 		String cadenaIterable = "Vamos a continuar con el while";
 		
 		CharacterIterator iterador = 
-				new StringCharacterIterator(cadenaIterable);
+				new StringCharacterIterator(cadenaIterable, 5);
+		
+		//"Vamos a continuar con el while\uFFFF"
 		
 		while (iterador.current() != CharacterIterator.DONE ) {
 			System.out.println(iterador.current());
 			iterador.next();
+		}
+		
+		System.out.println("***************");
+		String subCadena = cadenaIterable.substring(5);
+		for (char cha : subCadena.toCharArray() ) {
+			System.out.println(cha);
 		}
 		
 		
