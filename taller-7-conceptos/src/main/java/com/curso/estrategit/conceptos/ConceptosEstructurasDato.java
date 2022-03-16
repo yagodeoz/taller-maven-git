@@ -3,6 +3,7 @@ package com.curso.estrategit.conceptos;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Vector;
 
 
@@ -45,13 +46,13 @@ public class ConceptosEstructurasDato {
 			System.out.println(elem);
 		}
 		
-		HashMap<String, Long> edadPersona = 
-				              new HashMap<String, Long>();
+		HashMap<String, Integer> edadPersona = 
+				              new HashMap<String, Integer>();
 		
-		edadPersona.put("ByronSegovia", new Long(39));
-		edadPersona.put("JudithSegovia", new Long(14));
-		edadPersona.put("SadithSegovia", new Long(5));
-		edadPersona.put("MicaelaSegovia", new Long(2));
+		edadPersona.put("ByronSegovia", new Integer(39));
+		edadPersona.put("JudithSegovia", new Integer(14));
+		edadPersona.put("SadithSegovia", new Integer(5));
+		edadPersona.put("MicaelaSegovia", new Integer(2));
 		
 		Iterator<String> recorreClaves = 
 				edadPersona.keySet().iterator();
@@ -63,6 +64,17 @@ public class ConceptosEstructurasDato {
 			                   + ", tiene: " 
 			                   + edadPersona.get(clavePrimaria)
 			                   + " años"); 
+		}
+		
+		for ( Map.Entry<String, Integer> reg :
+			edadPersona.entrySet()
+			) 
+		{
+			System.out.println("La persona: " 
+	                   + reg.getKey() 
+	                   + ", tiene: " 
+	                   + reg.getValue()
+	                   + " años"); 
 		}
 		
 		
