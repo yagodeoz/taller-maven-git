@@ -6,11 +6,10 @@ import com.estrategit.curso.servicios.CalculadoraBasica;
 public class PruebaCalculadora {
 	
 	public static void main(String[] args) {
-		
-		Double parametro1 = Double.parseDouble(args[0]);
-		Double parametro2 = Double.parseDouble(args[1]);
-		
 		try {
+		Double parametro1 = Double.parseDouble(args[0]);
+		
+		Double parametro2 = Double.parseDouble(args[1]);
 			
 		Double resultadoSuma = CalculadoraBasica.suma(
 				               parametro1, 
@@ -37,6 +36,8 @@ public class PruebaCalculadora {
 				break;
 			}
 			
+		}catch (NumberFormatException e) {
+			System.err.println("Error en la transformación de parámetros");
 		}
 		
 	}
