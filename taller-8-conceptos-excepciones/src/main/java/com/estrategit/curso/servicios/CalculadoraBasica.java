@@ -11,16 +11,16 @@ public class CalculadoraBasica {
 	throws CalculadoraException
 	{
 		
-		if (sumando1 == null) {
+		if (sumando1 < 0) {
 			CalculadoraException exception = 
 					new CalculadoraException(CODIGO_SUMA, 
-							"El sumando1 es nulo");
+							"El sumando1 es negativo");
 			throw exception;
 		}
 		
-		if (sumando2 == null)
+		if (sumando2 < 0)
 			throw new CalculadoraException(CODIGO_SUMA, 
-					             "El sumando2 es nulo");
+					             "El sumando2 es negativo");
 			
 		return 	sumando1 + sumando2;		
 	}
