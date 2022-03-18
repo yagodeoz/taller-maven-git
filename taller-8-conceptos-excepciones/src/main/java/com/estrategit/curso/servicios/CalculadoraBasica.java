@@ -19,8 +19,21 @@ public class CalculadoraBasica {
 			throw new CalculadoraException("002", 
 					             "El sumando2 es nulo");
 			
-		return 	sumando1 + sumando2;
+		return 	sumando1 + sumando2;		
+	}
+	
+	public static Double multiplicar (Double multiplicando,
+			                          Double multiplicador) 
+	throws CalculadoraException
+	{
+		
+		if (multiplicando == null || multiplicador == null)
+			throw new CalculadoraException(
+					"003", 
+					"Uno de los factores es nulo");
+		return multiplicando * multiplicador;
 		
 	}
+	
 	
 }
