@@ -3,21 +3,27 @@ package com.estrategit.curso.excepciones;
 public class CalculadoraException 
 extends Exception {
 
+	public static final String ERROR_DESCONOCIDO = "Error desconocido";
+
+	public static final String ERROR_GENERAL_DEL_SISTEMA = "Error general del sistema";
+
+	public static final String CODIGO_DEFECTO = "000";
+
 	private static final long serialVersionUID = 1L;
 	
 	private String codigoTecnico;
 	private String mensaje;
 	
 	public CalculadoraException() {
-		super ("000" + " - " + "Error general del sistema");
-		codigoTecnico = "000";
-		mensaje = "Error general del sistema";
+		super (CODIGO_DEFECTO + " - " + ERROR_GENERAL_DEL_SISTEMA);
+		codigoTecnico = CODIGO_DEFECTO;
+		mensaje = ERROR_GENERAL_DEL_SISTEMA;
 	}
 	
 	public CalculadoraException(String codigo) {
-		super (codigo + " - " + "Error desconocido");
+		super (codigo + " - " + ERROR_DESCONOCIDO);
 		codigoTecnico = codigo;
-		mensaje = "Error desconocido";
+		mensaje = ERROR_DESCONOCIDO;
 	}
 	
 	public CalculadoraException(String codigo, String mensaje) {
