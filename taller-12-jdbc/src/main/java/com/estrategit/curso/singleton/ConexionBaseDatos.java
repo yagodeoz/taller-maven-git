@@ -3,6 +3,7 @@ package com.estrategit.curso.singleton;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Date;
 
 public final class ConexionBaseDatos {
 
@@ -10,11 +11,16 @@ public final class ConexionBaseDatos {
 	
 	public static Connection getConexionSqlServer()
 			throws SQLException{
+		System.out.println("Creando la conexión a la base de datos");
+		Date fechaInicial = new Date();
+		Long tiempoInicial = fechaInicial.getTime();
 		if (conn == null || conn.isClosed()) {
-			System.out.println("Creando la conexión a la base de datos");
-			crearConexion();
-			System.out.println("Conexión entregada con éxito");
+			crearConexion();			
 		}
+		Date fechaFinal = new Date();
+		Long tiempoFinal = fechaFinal.getTime();
+		System.out.println("Tiempo invertido en conexión"
+				+ ", " + (tiempoFinal - tiempoInicial ));
 		return conn;
 	}
 
