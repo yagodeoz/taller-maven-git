@@ -12,6 +12,9 @@
 
 Usuario: <%=request.getAttribute("usuario")%>
 
+<form action="<%=request.getContextPath()%>/paginas/privadas/fecha.do" method="post">
+	<input type="submit" value="Obtener Fecha" id="button-1"/>
+</form>
 
 </body>
 </html>
