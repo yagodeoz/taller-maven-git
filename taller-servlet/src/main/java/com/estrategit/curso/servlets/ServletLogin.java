@@ -37,6 +37,7 @@ public class ServletLogin extends HttpServlet {
 			req.setAttribute("usuario", usuario);
 			rd.forward(req, resp);
 		}else {
+			req.setAttribute("mensaje", "El usuario no existe");
 			RequestDispatcher rd = req.getRequestDispatcher("/paginas/publicas/error.jsp");
 			rd.forward(req, resp);
 		}

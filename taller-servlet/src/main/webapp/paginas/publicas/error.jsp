@@ -12,6 +12,11 @@
 
 <div style="text-align: center; color: red">
 	Mensaje del servidor: <%=request.getAttribute("mensaje")%> 
+	
+	<form action="<%=request.getContextPath()%>/paginas/publicas/login.jsp" method="get">
+		<input type="submit" value="Ir Login" id="button-1"/>
+	</form>
+	
 </div>
 
 
