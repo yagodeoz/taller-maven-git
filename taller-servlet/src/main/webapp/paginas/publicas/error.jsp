@@ -11,7 +11,7 @@
 <h1 style="text-align: center;">Mensaje de error</h1>
 
 <div style="text-align: center; color: red">
-	Mensaje del servidor 
+	Mensaje del servidor: <%=request.getAttribute("mensaje")%> 
 </div>
 
 

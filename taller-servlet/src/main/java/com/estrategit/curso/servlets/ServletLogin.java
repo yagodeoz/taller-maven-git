@@ -32,6 +32,7 @@ public class ServletLogin extends HttpServlet {
 		String clave = req.getParameter("clave");
 		
 		if ("ADMIN".equals(usuario)) {
+			req.getSession().setAttribute("usuarioLogin", usuario);
 			RequestDispatcher rd = req.getRequestDispatcher("/paginas/privadas/dashboard.jsp");
 			req.setAttribute("usuario", usuario);
 			rd.forward(req, resp);
