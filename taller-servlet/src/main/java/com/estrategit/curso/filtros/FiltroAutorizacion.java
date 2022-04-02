@@ -30,6 +30,12 @@ public class FiltroAutorizacion implements Filter {
 		HttpServletRequest req = (HttpServletRequest)request;
 		String usuario = (String)req.getSession().getAttribute("usuarioLogin");
 		
+		if (req.getSession().isNew()) {
+			RequestDispatcher rd = 
+					req.getRequestDispatcher("/paginas/publicas/login.jsp");
+			rd.forward(request, response);
+		}
+		
 		if (usuario == null || !usuario.equals("ADMIN") ) {
 			System.out.println("EL USUARIO NO ES CORRECTO");
 			req.setAttribute("mensaje", 

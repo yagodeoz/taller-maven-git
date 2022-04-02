@@ -23,6 +23,7 @@ public class ServletFecha extends HttpServlet {
 		SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
 		response.getWriter().println("Fecha sistema: " + formateador.format(fechaActual) );
 		request.getSession().invalidate();
+		request.getSession().setMaxInactiveInterval(3600);
 	}
 
 }

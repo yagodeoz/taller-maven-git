@@ -3,6 +3,9 @@
  xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
  <display-name>taller-servlet</display-name>
+ <session-config>
+  <session-timeout>3600</session-timeout>
+ </session-config>
  <welcome-file-list>
   <welcome-file>/paginas/publicas/login.jsp</welcome-file>
  </welcome-file-list>
