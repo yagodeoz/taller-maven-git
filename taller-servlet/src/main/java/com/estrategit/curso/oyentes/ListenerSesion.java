@@ -26,5 +26,6 @@ public class ListenerSesion implements HttpSessionListener {
     }
 
     public void sessionDestroyed(HttpSessionEvent arg0)  { 
+    	System.out.println("Sesion destruida");
     }
 }
