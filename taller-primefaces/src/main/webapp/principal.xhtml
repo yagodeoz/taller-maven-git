@@ -2,10 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
 
 <h:head></h:head> 
 <h:body>
-	<h1> Bienvenido: <h:outputText value="#{beanLogin.usuario}"></h:outputText> </h1>
+
+<p:layout fullPage="true">
+
+	<p:layoutUnit position="north" size="100" header="Bienvenido a al aplicación SEED" 
+	resizable="false" closable="false" collapsible="true"
+	></p:layoutUnit>
+	
+	<p:layoutUnit position="west" size="200" header="Menú" 
+	resizable="false" closable="false" collapsible="true"
+	></p:layoutUnit>
+	
+	<p:layoutUnit position="south" size="100" header="Derechos de autor"
+	resizable="false" closable="false" collapsible="true"></p:layoutUnit>
+	
+	<p:layoutUnit position="center">
+		
+		<h:form>
+		
+			<p:growl globalOnly="false"></p:growl>
+			<p:fieldset legend="Creacion de roles" toggleable="true">
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nombre rol:" for="txtRol"></p:outputLabel>
+					<p:inputText id="txtRol" value="#{beanRol.nombreRol}"></p:inputText>
+					<p:outputLabel value="Estado:" for="selEstado"></p:outputLabel>
+					<p:selectOneMenu id="selEstado" value="#{beanRol.estado}">
+						<f:selectItem itemLabel="ACTIVO" itemValue="A"/>
+						<f:selectItem itemLabel="INACTIVO" itemValue="I"/>
+					</p:selectOneMenu>
+					<p:commandButton value="Limpiar"></p:commandButton>
+					<p:commandButton value="Guardar" action="#{beanRol.registrarRol}"
+					update="@form" process="@form"
+					></p:commandButton>
+				</p:panelGrid>
+			</p:fieldset>
+			
+			<p:fieldset legend="Lista de roles" toggleable="true">
+				<p:dataTable emptyMessage="No existen roles" value="#{beanRol.listaRol}" var="rol">
+					<p:column headerText="Nombre Rol">
+						<h:outputText value="#{rol.rol}" />
+					</p:column>
+					<p:column headerText="Estado">
+						<h:outputText value="#{rol.estado}" />
+					</p:column>
+				</p:dataTable>
+			</p:fieldset>
+		
+		</h:form>
+		
+	</p:layoutUnit>
+
+</p:layout>
 </h:body>
 </html>
